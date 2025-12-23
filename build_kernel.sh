@@ -1,6 +1,7 @@
 #!/bin/sh
 
-sudo apt-get install curl wget -y
+ls -l
+ls -l arch/arm64/configs
 
 wget -O llvm.tar.gz https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/main-kernel-2025/clang-r547379.tar.gz
 mkdir llvm-20; cd llvm-20
