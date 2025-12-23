@@ -1,4 +1,4 @@
 [submodule "kernel"]
 	path = kernel
-	url = https://github.com/pascua28/android_kernel_samsung_sm7150
+	url = https://github.com/UN1CA/kernel_samsung_sm7150
 	branch = upstream-rel
