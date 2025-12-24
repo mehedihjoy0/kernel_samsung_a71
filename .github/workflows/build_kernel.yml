@@ -41,14 +41,18 @@ jobs:
       # 2. Run your custom bash script
       - name: Run build script
         run: |
-          cp build_kernel.sh kernel/build_kernel.sh
-          chmod +x kernel/build_kernel.sh
-          bash kernel/build_kernel.sh
+          cd kernel
+          mv ../build_kernel.sh build_kernel.sh
+          chmod +x build_kernel.sh
+          bash build_kernel.sh
+          cd ..
 
       - name: Build boot image
         run: |
+          mkdir bootimg && cd bootimg
           chmod +x build_boot.sh
           bash build_boot.sh
+          cd ..
 
       # 3. Upload the generated boot.img
       - name: Upload boot.img artifact

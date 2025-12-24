@@ -9,7 +9,6 @@ unzip "magisk.zip" "magiskboot/libmagiskboot.so"
 sudo cp "magiskboot/libmagiskboot.so" "/usr/bin/magiskboot"
 sudo chmod +x "/usr/bin/magiskboot"
 
-mkdir bootimg && cd bootimg
 magiskboot unpack ../boot.img
 cp ../kernel/out/arch/arm64/boot/Image kernel
 cp ../kernel/out/arch/arm64/boot/dts/qcom/sm6150.dtb dtb
