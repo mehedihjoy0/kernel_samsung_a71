@@ -14,5 +14,3 @@ cp ../kernel/out/arch/arm64/boot/Image kernel
 cp ../kernel/out/arch/arm64/boot/dts/qcom/sm6150.dtb dtb
 magiskboot repack ../boot.img boot-new.img
 mv boot-new.img ../boot.img
-cd ../
-

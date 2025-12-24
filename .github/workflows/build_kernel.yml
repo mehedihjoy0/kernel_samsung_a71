@@ -50,9 +50,13 @@ jobs:
       - name: Build boot image
         run: |
           mkdir bootimg && cd bootimg
+          mv ../build_boot.sh build_boot.sh
           chmod +x build_boot.sh
           bash build_boot.sh
-          cd ..
+
+      - name: Generate release timestamp
+        id: ts
+        run: echo "RELEASE_TS=$(date +'%Y%m%d-%H%M%S')" >> $GITHUB_ENV
 
       # 3. Upload the generated boot.img
       - name: Upload boot.img artifact
@@ -67,8 +71,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          body_path: versions.txt
-          tag_name: "ParadigmKernel"
-          name: "ParadigmKernel"
+          tag_name: "ParadigmKernel-${{ env.RELEASE_TS }}"
+          name: "ParadigmKernel-${{ env.RELEASE_TS }}"
           files: |
             boot.img
