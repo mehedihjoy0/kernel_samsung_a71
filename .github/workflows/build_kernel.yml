@@ -70,7 +70,7 @@ jobs:
         if: github.event.inputs.release
         uses: softprops/action-gh-release@v2.4.2
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
           tag_name: "ParadigmKernel-${{ env.RELEASE_TS }}"
           name: "ParadigmKernel-${{ env.RELEASE_TS }}"
