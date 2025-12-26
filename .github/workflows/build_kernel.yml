@@ -58,7 +58,7 @@ jobs:
         id: ts
         run: |
           echo "RELEASE_TS=$(date +'%Y%m%d-%H%M%S')" >> $GITHUB_ENV
-          echo "REL_VER='Kernel version: $(cat kernel/out/include/config/kernel.release)'" >> $GITHUB_ENV
+          echo "REL_VER=Kernel version: $(cat kernel/out/include/config/kernel.release)" >> $GITHUB_ENV
 
 
       # 3. Upload the generated boot.img
