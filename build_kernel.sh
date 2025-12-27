@@ -1,7 +1,6 @@
 #!/bin/sh
 
-ls -l
-ls -l arch/arm64/configs
+cd kernel
 
 export ARCH=arm64
 mkdir out
